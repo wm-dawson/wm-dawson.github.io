@@ -43,7 +43,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/avatar.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -101,7 +101,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/avatar.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -152,6 +152,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/08/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">Javascript设计模式</a>
+    </h1>
+  
+
+        
+        <a href="/2021/02/08/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2021-02-08T08:41:17.076Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>设计模式：在面向对象软件设计过程中针对特定问题的简洁而优雅的解决方案。</p>
+</blockquote>
+<p>通俗的说法就是：设计模式解决某个特定场景下对某种问题的解决方案。因此，当我们遇到合适的场景时，我们可能会条件反射一样自然而然的想到符合这种场景的设计模式。</p>
+<p>比如，当系统中某个接口的机构已经无法满足我们现在的业务需求，但又不能改动这个接口，因为，可能原来的系统很多功能都依赖于这个接口，改动接口会牵扯到太多的文件。因此，应对这种场景，我们很快想到可以使用适配器模式来解决此类问题。</p>
+<p>下面是JavaScript中常用到的设计模式：</p>
+<h3 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1. 单例模式"></a>1. 单例模式</h3><hr>
+<blockquote>
+<p>单例模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点。实现的方法为先判断实例存在与否，如果存在则直接返回，如果不存在就创建了再返回，这就确保了一个类只有一个实例对象。</p>
+</blockquote>
+<p><strong>适用场景</strong>：一个单一对象。比如：弹窗，无论点击多少次，弹窗只应该被创建一次。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-工厂模式"><a href="#2-工厂模式" class="headerlink" title="2. 工厂模式"></a>2. 工厂模式</h3><blockquote>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/08/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript之垃圾回收" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,22 +256,9 @@
 <li>使用分配到的内存（读、写）</li>
 <li>不需要时将其释放/归还</li>
 </ol>
-<h4 id="当内存不再需要使用时释放"><a href="#当内存不再需要使用时释放" class="headerlink" title="当内存不再需要使用时释放"></a>当内存不再需要使用时释放</h4><p>大多数内存管理的问题都在这个阶段。在这里最艰难的任务就是找到“哪些被分配的内存确实已经不再需要了“。</p>
-<p>高级语言解释器嵌入了“垃圾回收器”，它的主要工作是跟踪内存的分配和使用，以便当跟踪的内存不在使用时，自动释放它。这只能是一个近似的过程，因为要知道是否仍然需要某块内存是<strong>无法判定的</strong>（无法通过某种算法解决）。</p>
-<h4 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h4><p>垃圾回收只能<strong>有限制</strong>的解决一般问题。下面是主要的垃圾回收算法和局限性。</p>
-<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><p>在内存管理的环境中，一个对象如果有访问另一个对象的权限（隐式或显式），叫做一个对象引用另一个对象。例如，一个对象具有对它原型的引用（隐式引用）和对它属性的引用（显示引用）。<strong>垃圾回收算法主要依赖于引用的概念</strong>。</p>
-<h5 id="1-引用计数垃圾收集"><a href="#1-引用计数垃圾收集" class="headerlink" title="1. 引用计数垃圾收集"></a>1. 引用计数垃圾收集</h5><p>​    此算法把“对象是否不在需要“简化定义为“对象有没有其他对象引用到它“。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。</p>
-<h6 id="限制：循环引用"><a href="#限制：循环引用" class="headerlink" title="限制：循环引用"></a>限制：循环引用</h6><p>该算法有个限制：无法处理循环引用的实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> o=&#123;&#125;;</span><br><span class="line">  <span class="keyword">var</span> o2=&#123;&#125;;</span><br><span class="line">  o.a=o2;  <span class="comment">// o 引用了o2</span></span><br><span class="line">  o2.a=o;	 <span class="comment">// o2引用了o</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;azerty&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h5 id="2-标记-清除算法"><a href="#2-标记-清除算法" class="headerlink" title="2. 标记-清除算法"></a>2. 标记-清除算法</h5><p>​    此算法把“对象是否不在需要”简化定义为“对象是否可以获得“。</p>
-<p>​    这个算法假定设置一个叫做根（root）的对象（在JavaScript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的对象，然后找这些对象引用的对象……从根开始，<strong>垃圾回收器将找到所有可以获得的对象和收集所有不能获得的对象</strong>。</p>
-<p>​    这个算法比前一个要好，因为“有零引用的对象“总是不可获得的，但是相反却不一定。从上面的例子中，函数调用返回后，两个对象从全局对象出发无法获取。因此，它们将会被垃圾回收器回收。因此，<strong>循环引用不再是问题了。</strong></p>
-<p>​    从2012年起，所有现代浏览器都使用了标记-清除垃圾回收算法。所有JavaScript垃圾回收算法的改进都是基于标记-清除算法的改进。</p>
-
+        
+          <a class="article-more-a" href="/2021/02/03/JavaScript%E4%B9%8B%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/#more">more >></a>
+        
       
 
       
